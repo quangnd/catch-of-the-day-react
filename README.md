@@ -1,8 +1,8 @@
 # Catch of the day ⚓️
 
 See living demo at [https://munfish-react.herokuapp.com](https://munfish-react.herokuapp.com/)
-This repo was based on Web Bos's course - [ReactForBeginner](https://reactforbeginners.com/)
 
+- This repo was based on Web Bos's course - [ReactForBeginner](https://reactforbeginners.com/)
 - Only for learning purposes 🙏🏻! 
 
 ## Useful notes
