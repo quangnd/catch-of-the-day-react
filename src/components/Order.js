@@ -7,7 +7,7 @@ class Order extends React.Component {
 
     this.renderOrder = this.renderOrder.bind(this);
   }
-  
+
   renderOrder(key) {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
