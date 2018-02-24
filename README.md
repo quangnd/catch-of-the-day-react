@@ -16,3 +16,10 @@ git commit -m "Start with create-react-app"
 git push heroku master
 heroku open
 ```
+
+## ES6 using
+
+- [x] Computed property
+- [x] Spread 
+- [x] Object.keys
+- [x] map()
