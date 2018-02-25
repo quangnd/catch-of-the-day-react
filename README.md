@@ -20,6 +20,7 @@ heroku open
 ## ES6 using
 
 - [x] Computed property
-- [x] Spread 
+- [x] Spread syntax
 - [x] Object.keys
 - [x] map()
+- [x] delete [property]

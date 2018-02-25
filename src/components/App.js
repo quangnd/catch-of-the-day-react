@@ -17,8 +17,10 @@ class App extends React.Component {
 
     this.addFish = this.addFish.bind(this);
     this.updateFish = this.updateFish.bind(this);
+    this.removeFish = this.removeFish.bind(this);
     this.loadSamples = this.loadSamples.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
+    this.removeFromOrder = this.removeFromOrder.bind(this);
   }
 
   componentWillMount() {
@@ -27,14 +29,13 @@ class App extends React.Component {
       state: 'fishes'
     });
 
-    /**FIXME: This code caused error  */
-    //  const localStorageRef = localStorage.getItem(`order-${this.props.params.storeId}`);
+     const localStorageRef = localStorage.getItem(`order-${this.props.params.storeId}`);
 
-    //  if(localStorageRef) {
-    //    this.setState({
-    //      order: JSON.parse(localStorageRef)
-    //    });
-    //  }
+     if(localStorageRef) {
+       this.setState({
+         order: JSON.parse(localStorageRef)
+       });
+     }
   }
 
   componentWillUnmount() {
@@ -60,6 +61,12 @@ class App extends React.Component {
     this.setState({ fishes });
   }
 
+  removeFish(key) {
+    const fishes = {...this.state.fishes};
+    fishes[key] = null; //need to work on Firebase
+    this.setState({ fishes });
+  }
+
   loadSamples() {
     this.setState({ fishes: sampleFishes });
   }
@@ -67,6 +74,12 @@ class App extends React.Component {
   addToOrder(key) {
     const order = {...this.state.order};
     order[key] = order[key] + 1 || 1;
+    this.setState({ order });
+  }
+
+  removeFromOrder(key) {
+    const order = {...this.state.order};
+    delete order[key];
     this.setState({ order });
   }
 
@@ -86,11 +99,13 @@ class App extends React.Component {
         <Order 
           fishes={this.state.fishes} 
           order={this.state.order} 
-          params={this.props.params} 
+          params={this.props.params}
+          removeFromOrder={this.removeFromOrder}
         />
         <Inventory
           addFish={this.addFish}
           updateFish={this.updateFish} 
+          removeFish={this.removeFish} 
           loadSamples={this.loadSamples}
           fishes={this.state.fishes}
         />
