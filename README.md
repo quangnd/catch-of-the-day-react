@@ -7,6 +7,7 @@
 
 - Run ` git config core.autocrlf true` to disable message **warning: LF will be replaced by CRLF** in Windows.
 - Read more about [React LifeCycle](https://reactjs.org/docs/state-and-lifecycle.html).
+- Read more about CSSTransitionGroup in `react-addons-css-transition-group` module.
 - Deploy CRA app to Heroku - simplest way based on [Buildpack](https://github.com/mars/create-react-app-buildpack)
 ```
 heroku login
