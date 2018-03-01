@@ -30,4 +30,8 @@ class AddFirshForm extends React.Component {
   }
 }
 
+AddFirshForm.propTypes = {
+  addFish: React.PropTypes.func.isRequired
+}
+
 export default AddFirshForm;
